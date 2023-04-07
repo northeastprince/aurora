@@ -1,0 +1,79 @@
+# Name of your application. Used to uniquely configure containers.
+service: aurora
+
+# Name of the container image.
+image: northeastprince/aurora
+
+# Deploy to these servers.
+servers:
+  web:
+    hosts:
+      - 5.75.231.239
+    labels:
+      traefik.http.routers.aurora.rule: Host(`api.auroraalert.cc`)
+  jobs:
+    hosts:
+      - 5.75.231.239
+    cmd: bundle exec sidekiq
+
+# Credentials for your image host.
+registry:
+  # Specify the registry server, if you're not using Docker Hub
+  server: ghcr.io
+  username:
+    - MRSK_REGISTRY_USERNAME
+  password:
+    - MRSK_REGISTRY_PASSWORD
+
+# Inject ENV variables into containers (secrets come from .env).
+env:
+  clear:
+    RAILS_ENV: production
+    RAILS_LOG_TO_STDOUT: true
+  secret:
+    - SECRET_KEY_BASE
+    - DATABASE_URL
+    - REDIS_URL
+    - WEATHERAPI_KEY
+    - TWILIO_ACCOUNT_SID
+    - TWILIO_AUTH_TOKEN
+    - TWILIO_PHONE_NUMBER
+
+# Call a broadcast command on deploys.
+# audit_broadcast_cmd:
+#   bin/broadcast_to_bc
+
+# Use a different ssh user than root
+# ssh:
+#   user: app
+
+# Configure builder setup.
+builder:
+  remote:
+    arch: amd64
+    host: ssh://root@5.75.231.239
+
+# Use accessory services (secrets come from .env).
+accessories:
+  db:
+    image: mysql:8.0
+    host: 5.75.231.239
+    port: 3306
+    env:
+      clear:
+        MYSQL_ROOT_HOST: "%"
+        MYSQL_ROOT_PASSWORD: "password"
+    files:
+      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+    directories:
+      - data:/var/lib/mysql
+
+# Configure custom arguments for Traefik
+# traefik:
+#   args:
+#     accesslog: true
+#     accesslog.format: json
+
+# Configure a custom healthcheck (default is /up on port 3000)
+healthcheck:
+  path: /robots.txt
