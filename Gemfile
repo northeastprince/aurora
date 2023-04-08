@@ -28,10 +28,12 @@ gem "rack-cors"
 
 gem "ziptz"
 gem "faraday"
+
 gem "phonelib"
 gem "twilio-ruby"
 
-gem "mrsk"
+gem "mrsk" # deployments
+gem "newrelic_rpm" # monitoring
 
 gem "bootsnap", require: false # reduces boot times through caching; required in config/boot.rb
 

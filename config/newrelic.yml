@@ -1,0 +1,37 @@
+# https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-configuration
+
+common: &default_settings
+  license_key: <%= ENV["NEWRELIC_LICENSE_KEY"] %>
+
+  app_name: aurora
+
+  log_level: info
+
+  distributed_tracing:
+    enabled: true
+
+  application_logging:
+    enabled: true
+    forwarding:
+      enabled: true
+      max_samples_stored: 10000
+    metrics:
+      enabled: true
+    local_decorating:
+      enabled: false
+
+# Environment-specific settings are in this section.
+# RAILS_ENV or RACK_ENV (as appropriate) is used to determine the environment.
+# If your application has other named environments, configure them here.
+development:
+  <<: *default_settings
+  agent_enabled: false
+  monitor_mode: false
+
+test:
+  <<: *default_settings
+  agent_enabled: false
+  monitor_mode: false
+
+production:
+  <<: *default_settings
