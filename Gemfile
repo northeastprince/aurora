@@ -33,7 +33,7 @@ gem "phonelib"
 gem "twilio-ruby"
 
 gem "mrsk" # deployments
-gem "newrelic_rpm" # monitoring
+gem "appsignal"
 
 gem "bootsnap", require: false # reduces boot times through caching; required in config/boot.rb
 
