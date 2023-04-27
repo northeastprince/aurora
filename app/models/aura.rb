@@ -7,7 +7,7 @@ class Aura
     @content ||= "Good #{part_of_day}, #{@user.first_name}! It's gonna be #{description_of_weather} - #{suggestion}"
   end
 
-  def send
+  def deliver
     client = Twilio::REST::Client.new
     client.messages.create(
       from: ENV["TWILIO_PHONE_NUMBER"],
