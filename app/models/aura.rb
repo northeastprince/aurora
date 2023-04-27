@@ -29,11 +29,6 @@ class Aura
     end
   end
 
-  def temperature_in_fahrenheit
-    response = Faraday.get("http://api.weatherapi.com/v1/forecast.json?key=#{ENV["WEATHERAPI_KEY"]}&q=#{@user.zip_code.to_s}&days=1&aqi=no&alerts=no")
-    JSON.parse(response.body)["current"]["temp_f"].to_i
-  end
-
   def description_of_weather
     "around #{temperature_in_fahrenheit} degrees today"
   end
@@ -47,7 +42,6 @@ class Aura
       "you should definitely",
       "it might be a good day to",
       "a human like yourself might even",
-      # more phrases
       "you'd be crazy not to",
       "it's a no-brainer to",
       "it's so good, even your grandma would",
@@ -77,7 +71,7 @@ class Aura
     when 40...50
       "grab a light jacket and a pair of jeans for a comfortable day."
     when 50...60
-      "enjoy the nice temperature with a light sweater and shorts"
+      "enjoy the nice temperature with a light sweater and shorts."
     when 60...70
       "perfect weather for a t-shirt and shorts. Get outside and soak up the sunshine!"
     when 70...90
@@ -85,5 +79,14 @@ class Aura
     else
       "stay cool and hydrated B-)"
     end
+  end
+
+  def temperature_in_fahrenheit
+    @temperature_in_fahrenheit ||=
+      begin
+       connection = Faraday.new("https://api.weatherapi.com") { |connection| connection.response :json }
+       response = connection.get("/v1/forecast.json?key=#{ENV["WEATHERAPI_KEY"]}&q=#{@user.zip_code}&days=1&aqi=no&alerts=no")
+       response.body["current"]["temp_f"].to_i
+      end
   end
 end
