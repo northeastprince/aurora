@@ -290,7 +290,7 @@ DEPENDENCIES
   puma
   rack-cors
   rails!
-  redis (~> 4.0)
+  redis
   selenium-webdriver
   sidekiq
   sidekiq-cron

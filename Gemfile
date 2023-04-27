@@ -10,7 +10,7 @@ gem "rails", github: "rails/rails", branch: "main"
 # Drivers
 gem "sqlite3", "~> 1.4"
 gem "mysql2"
-gem "redis", "~> 4.0"
+gem "redis"
 gem "sidekiq"
 gem "sidekiq-cron"
 
