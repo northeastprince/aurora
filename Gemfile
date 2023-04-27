@@ -23,7 +23,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Security
-gem "bcrypt", "~> 3.1.7"
+gem "bcrypt"
 gem "rack-cors"
 
 gem "ziptz"
