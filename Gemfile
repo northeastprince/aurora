@@ -14,7 +14,7 @@ gem "redis", "~> 4.0"
 gem "sidekiq"
 gem "sidekiq-cron"
 
-gem "puma", "~> 5.0"
+gem "puma"
 
 # Assets
 gem "sprockets-rails"
