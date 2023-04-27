@@ -8,7 +8,7 @@ gem "tzinfo-data" # don't rely on OS timezone data
 gem "rails", github: "rails/rails", branch: "main"
 
 # Drivers
-gem "sqlite3", "~> 1.4"
+gem "sqlite3"
 gem "mysql2"
 gem "redis"
 gem "sidekiq"

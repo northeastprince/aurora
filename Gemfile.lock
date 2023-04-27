@@ -295,7 +295,7 @@ DEPENDENCIES
   sidekiq
   sidekiq-cron
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   stimulus-rails
   turbo-rails
   twilio-ruby
