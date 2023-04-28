@@ -1,7 +1,9 @@
 class AurasDeliveryJob < ApplicationJob
-  def perform(*args)
-    User.find_each do |user|
-      Aura.new(user).deliver
+  def perform(*specific_recipients)
+    recipients = specific_recipients.any? ? specific_recipients : User.all
+
+    recipients.each do |recipient|
+      Aura.new(recipient).deliver
     end
   end
 end
