@@ -10,8 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_01_145009) do
-  create_table "users", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2023_04_29_224410) do
+  create_table "auras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "zip_code"
+    t.integer "temperature_in_fahrenheit"
+    t.text "content"
+    t.timestamp "delivered_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["delivered_at"], name: "index_auras_on_delivered_at"
+    t.index ["temperature_in_fahrenheit"], name: "index_auras_on_temperature_in_fahrenheit"
+    t.index ["user_id"], name: "index_auras_on_user_id"
+    t.index ["zip_code"], name: "index_auras_on_zip_code"
+  end
+
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "phone_number", null: false
     t.string "zip_code"

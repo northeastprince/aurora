@@ -3,7 +3,7 @@ class AurasDeliveryJob < ApplicationJob
     recipients = specific_recipients.any? ? specific_recipients : User.all
 
     recipients.each do |recipient|
-      Aura.new(recipient).deliver
+      recipient.auras.create!.deliver
     end
   end
 end

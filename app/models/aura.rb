@@ -1,25 +1,31 @@
-class Aura
-  def initialize(user)
-    @user = user
+class Aura < ApplicationRecord
+  belongs_to :user
+
+  before_create do
+    self.zip_code = user.zip_code
+    self.temperature_in_fahrenheit = user.current_temp_in_fahrenheit
+    self.content = generate_content
   end
 
-  def content
-    @content ||= "Good #{part_of_day}, #{@user.first_name}! It's gonna be #{description_of_weather} - #{suggestion}"
+  def generate_content
+    "Good #{part_of_day}, #{user.first_name}! It's gonna be #{description_of_weather} - #{suggestion}"
   end
 
   def deliver
     client = Twilio::REST::Client.new
     client.messages.create(
       from: ENV["TWILIO_PHONE_NUMBER"],
-      to: Phonelib.parse(@user.phone_number).e164,
+      to: user.phone_number,
       body: content
     )
+
+    update!(delivered_at: Time.now)
   end
 
   private
 
   def part_of_day
-    hour = Time.use_zone(Ziptz.instance.time_zone_name(@user.zip_code)) { Time.now.hour }
+    hour = Time.use_zone(Ziptz.instance.time_zone_name(user.zip_code)) { Time.current.hour }
     if hour < 12
       "morning"
     elsif hour < 18
@@ -79,14 +85,5 @@ class Aura
     else
       "stay cool and hydrated B-)"
     end
-  end
-
-  def temperature_in_fahrenheit
-    @temperature_in_fahrenheit ||=
-      begin
-       connection = Faraday.new("https://api.weatherapi.com") { |connection| connection.response :json }
-       response = connection.get("/v1/forecast.json?key=#{ENV["WEATHERAPI_KEY"]}&q=#{@user.zip_code}&days=1&aqi=no&alerts=no")
-       response.body["current"]["temp_f"].to_i
-      end
   end
 end
