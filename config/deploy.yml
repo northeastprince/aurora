@@ -29,7 +29,6 @@ registry:
 env:
   clear:
     RAILS_ENV: production
-    RAILS_LOG_TO_STDOUT: true
     DATABASE_HOST: 172.17.0.1
   secret:
     - SECRET_KEY_BASE
