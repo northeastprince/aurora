@@ -63,11 +63,18 @@ accessories:
     env:
       clear:
         MYSQL_ROOT_HOST: "%"
-        MYSQL_ROOT_PASSWORD: "password"
+      secret:
+        - MYSQL_ROOT_PASSWORD
     files:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
       - data:/var/lib/mysql
+  redis-sidekiq:
+    image: redis
+    host: 5.75.231.239
+    port: 6379
+    directories:
+      - data:/data
 
 # Configure custom arguments for Traefik
 # traefik:
