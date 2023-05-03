@@ -22,13 +22,14 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Security
-gem "bcrypt"
 gem "rack-cors"
 
 gem "ziptz"
-gem "faraday"
 
 gem "phonelib"
+
+# External Services & APIs
+gem "faraday"
 gem "twilio-ruby"
 
 gem "mrsk" # deployments
