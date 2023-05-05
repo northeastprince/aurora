@@ -34,7 +34,7 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /aurora /aurora
 
-RUN useradd aurora --home /aurora --shell /bin/bash && \
+RUN useradd aurora --create-home --shell /bin/bash && \
     chown -R aurora:aurora db storage log tmp
 USER aurora:aurora
 
