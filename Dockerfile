@@ -28,7 +28,7 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 FROM base
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y default-mysql-client libvips && \
+    apt-get install --no-install-recommends -y default-mysql-client libvips curl && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build /usr/local/bundle /usr/local/bundle
