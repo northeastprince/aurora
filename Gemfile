@@ -24,9 +24,10 @@ gem "stimulus-rails"
 # Security
 gem "rack-cors"
 
-gem "ziptz"
-
 gem "phonelib"
+
+gem "ziptz"
+gem "geocoder"
 
 # External Services & APIs
 gem "faraday"

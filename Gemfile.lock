@@ -134,6 +134,7 @@ GEM
     fugit (1.8.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
+    geocoder (1.8.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -282,6 +283,7 @@ DEPENDENCIES
   capybara
   debug
   faraday
+  geocoder
   importmap-rails
   mrsk
   mysql2
