@@ -14,7 +14,7 @@ class Aura < ApplicationRecord
   def deliver
     client = Twilio::REST::Client.new
     client.messages.create(
-      from: ENV["TWILIO_PHONE_NUMBER"],
+      messaging_service_sid: ENV["TWILIO_MESSAGING_SERVICE_SID"],
       to: user.phone_number,
       body: content
     )
