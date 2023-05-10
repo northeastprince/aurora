@@ -134,7 +134,6 @@ GEM
     fugit (1.8.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
-    geocoder (1.8.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -255,6 +254,8 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
+    validates_zipcode (0.5.2)
+      activemodel (>= 4.2.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -283,7 +284,6 @@ DEPENDENCIES
   capybara
   debug
   faraday
-  geocoder
   importmap-rails
   mrsk
   mysql2
@@ -300,6 +300,7 @@ DEPENDENCIES
   turbo-rails
   twilio-ruby
   tzinfo-data
+  validates_zipcode
   web-console
   webdrivers
   ziptz

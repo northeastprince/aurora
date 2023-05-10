@@ -26,14 +26,15 @@ gem "rack-cors"
 
 gem "phonelib"
 
+gem "validates_zipcode"
 gem "ziptz"
-gem "geocoder"
 
 # External Services & APIs
 gem "faraday"
 gem "twilio-ruby"
 
 gem "mrsk" # deployments
+
 gem "appsignal"
 
 gem "bootsnap", require: false # reduces boot times through caching; required in config/boot.rb
