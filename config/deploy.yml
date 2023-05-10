@@ -11,10 +11,16 @@ servers:
       - 5.75.231.239
     labels:
       traefik.http.routers.aurora.rule: Host(`api.auroraalert.cc`)
+    options:
+      memory: 1g
+      cpus: 0.5
   jobs:
     hosts:
       - 5.75.231.239
     cmd: bundle exec sidekiq
+    options:
+      memory: 1g
+      cpus: 1
 
 # Credentials for your image host.
 registry:
@@ -63,18 +69,22 @@ accessories:
     env:
       clear:
         MYSQL_ROOT_HOST: "%"
-      secret:
-        - MYSQL_ROOT_PASSWORD
     files:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
       - data:/var/lib/mysql
+    options:
+      memory: 1g
+      cpus: 1
   redis-sidekiq:
     image: redis
     host: 5.75.231.239
     port: 6379
     directories:
       - data:/data
+    options:
+      memory: 512m
+      cpus: 0.5
 
 # Configure custom arguments for Traefik
 # traefik:
