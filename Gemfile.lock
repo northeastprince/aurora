@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 59e08a5c55b4297a8d6fc9f8641bd3bb159d2300
+  revision: 8c3b8bc59cbc6aa44f38ce51bfd5ff67ff6d38bc
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -116,7 +116,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
-    connection_pool (2.4.0)
+    connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.3)
     debug (1.8.0)
@@ -145,7 +145,7 @@ GEM
     irb (1.6.4)
       reline (>= 0.3.0)
     jwt (2.7.0)
-    loofah (2.21.2)
+    loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -210,7 +210,7 @@ GEM
     redis-client (0.14.1)
       connection_pool
     regexp_parser (2.8.0)
-    reline (0.3.3)
+    reline (0.3.4)
       io-console (~> 0.5)
     rexml (3.2.5)
     ruby2_keywords (0.0.5)
