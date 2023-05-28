@@ -10,7 +10,7 @@ ENV RAILS_ENV="production" \
 FROM base as build
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential pkg-config git default-libmysqlclient-dev
+    apt-get install --no-install-recommends -y build-essential pkg-config git libpq-dev
 
 COPY .ruby-version Gemfile Gemfile.lock ./
 RUN bundle install && \
@@ -28,7 +28,7 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 FROM base
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y default-mysql-client libvips curl && \
+    apt-get install --no-install-recommends -y postgresql-client curl && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build /usr/local/bundle /usr/local/bundle

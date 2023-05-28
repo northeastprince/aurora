@@ -167,7 +167,6 @@ GEM
       thor (~> 1.2)
       zeitwerk (~> 2.5)
     msgpack (1.7.0)
-    mysql2 (0.5.5)
     net-imap (0.3.4)
       date
       net-protocol
@@ -183,6 +182,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.1-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.3)
     phonelib (0.8.1)
     public_suffix (5.0.1)
     puma (6.2.2)
@@ -286,7 +286,7 @@ DEPENDENCIES
   faraday
   importmap-rails
   mrsk
-  mysql2
+  pg
   phonelib
   puma
   rack-cors
