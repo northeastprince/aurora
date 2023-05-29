@@ -34,8 +34,8 @@ gem "faraday"
 gem "twilio-ruby"
 
 gem "mrsk" # deployments
-
-gem "appsignal"
+gem "lograge"
+gem "appsignal" # monitoring
 
 gem "bootsnap", require: false # reduces boot times through caching; required in config/boot.rb
 
