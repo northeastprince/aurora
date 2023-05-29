@@ -41,6 +41,10 @@ gem "bootsnap", require: false # reduces boot times through caching; required in
 
 group :development, :test do
   gem "debug"
+
+  # Code Critics
+  gem "standard"
+  gem "standard-rails"
 end
 
 group :development do

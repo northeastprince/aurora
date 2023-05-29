@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  validates :first_name, presence: true, length: { maximum: 22 }
-  validates :phone_number, presence: true, uniqueness: true, phone: { possible: true, countries: [:us] }
-  before_save -> (user) { user.phone_number = Phonelib.parse(user.phone_number).e164 }
-  validates :zip_code, zipcode: { country_code: :us }
+  validates :first_name, presence: true, length: {maximum: 22}
+  validates :phone_number, presence: true, uniqueness: true, phone: {possible: true, countries: [:us]}
+  before_save ->(user) { user.phone_number = Phonelib.parse(user.phone_number).e164 }
+  validates :zip_code, zipcode: {country_code: :us}
   validate :zip_code_exists, if: -> { errors.none? }
 
   has_many :auras
@@ -11,7 +11,7 @@ class User < ApplicationRecord
     connection = Faraday.new("https://api.weatherapi.com") { |connection| connection.response :json }
     response = connection.get("/v1/forecast.json?key=#{ENV["WEATHERAPI_KEY"]}&q=#{zip_code}&days=1&aqi=no&alerts=no")
 
-    if temp = response.body.dig("current", "temp_f")
+    if (temp = response.body.dig("current", "temp_f"))
       temp.to_i
     end
   end
