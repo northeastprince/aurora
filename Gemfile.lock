@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 8c3b8bc59cbc6aa44f38ce51bfd5ff67ff6d38bc
+  revision: 7496cfea560bba1e3deec854a5b98d2d45a806ba
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -181,7 +181,7 @@ GEM
       net-protocol
     net-ssh (7.1.0)
     nio4r (2.5.9)
-    nokogiri (1.15.1-x86_64-linux)
+    nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     phonelib (0.8.1)
     public_suffix (5.0.1)
@@ -202,8 +202,9 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.5.0)
-      loofah (~> 2.19, >= 2.19.1)
+    rails-html-sanitizer (1.6.0)
+      loofah (~> 2.21)
+      nokogiri (~> 1.14)
     rake (13.0.6)
     redis (5.0.6)
       redis-client (>= 0.9.0)
