@@ -5,6 +5,8 @@ ruby "3.2.2"
 
 gem "tzinfo-data" # don't rely on OS timezone data
 
+gem "dotenv-rails"
+
 gem "rails", github: "rails/rails", branch: "main"
 
 # Drivers
