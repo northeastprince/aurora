@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  encrypts :first_name
+  encrypts :phone_number, :zip_code, deterministic: true
+
   validates :first_name, presence: true, length: {maximum: 22}
 
   before_validation -> { self.phone_number = Phonelib.parse(phone_number).e164 }, if: -> { Phonelib.valid?(phone_number) }

@@ -1,6 +1,9 @@
 class Aura < ApplicationRecord
   belongs_to :user
 
+  encrypts :zip_code, deterministic: true
+  encrypts :content
+
   before_create do
     self.zip_code ||= user.zip_code
     self.temperature_in_fahrenheit ||= user.current_temp_in_fahrenheit
