@@ -2,13 +2,13 @@ class Aura < ApplicationRecord
   belongs_to :user
 
   before_create do
-    self.zip_code = user.zip_code
-    self.temperature_in_fahrenheit = user.current_temp_in_fahrenheit
-    self.content = generate_content
+    self.zip_code ||= user.zip_code
+    self.temperature_in_fahrenheit ||= user.current_temp_in_fahrenheit
+    generate_content
   end
 
   def generate_content
-    "Good #{part_of_day}, #{user.first_name}! It's gonna be #{description_of_weather} - #{suggestion}"
+    self.content = "Good #{part_of_day}, #{user.first_name}! It's gonna be #{description_of_weather} - #{suggestion}"
   end
 
   def deliver
