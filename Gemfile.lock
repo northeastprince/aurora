@@ -293,6 +293,8 @@ GEM
       rubocop-rails (~> 2.19.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.29-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -355,6 +357,7 @@ DEPENDENCIES
   standard
   standard-rails
   stimulus-rails
+  tailwindcss-rails
   turbo-rails
   twilio-ruby
   tzinfo-data
