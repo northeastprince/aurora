@@ -19,6 +19,7 @@ gem "puma"
 
 # Assets
 gem "sprockets-rails"
+gem "tailwindcss-rails"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
