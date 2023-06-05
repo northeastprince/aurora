@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: d026af43c35c25814b4d16511f1b8fc6d70a4569
+  revision: 628cdf9e9cf54145cca716eb2f80dc04ef66f2f2
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -140,13 +140,13 @@ GEM
       raabro (~> 1.4)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    i18n (1.13.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.6.4)
+    irb (1.7.0)
       reline (>= 0.3.0)
     json (2.6.3)
     jwt (2.7.0)
@@ -227,7 +227,7 @@ GEM
     redis-client (0.14.1)
       connection_pool
     regexp_parser (2.8.0)
-    reline (0.3.4)
+    reline (0.3.5)
       io-console (~> 0.5)
     request_store (1.5.1)
       rack (>= 1.4)
