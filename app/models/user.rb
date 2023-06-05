@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: {maximum: 22}
 
   before_validation -> { self.phone_number = Phonelib.parse(phone_number).e164 }, if: -> { Phonelib.valid?(phone_number) }
-  validates :phone_number, presence: true, uniqueness: true, phone: {possible: true, countries: [:us]}
+  validates :phone_number, uniqueness: true, phone: {possible: true, countries: [:us]}
 
   validates :zip_code, zipcode: {country_code: :us}
   validate :zip_code_exists, if: -> { errors.none? }
