@@ -331,7 +331,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.8)
-    ziptz (3.0.16)
+    ziptz (3.0.17)
 
 PLATFORMS
   x86_64-linux
