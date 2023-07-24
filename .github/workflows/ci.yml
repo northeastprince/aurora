@@ -1,0 +1,36 @@
+name: CI
+on: [push]
+jobs:
+  standard:
+    name: Standardize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run Standard
+        run: bundle exec standardrb
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15.3
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: aurora
+          POSTGRES_HOST_AUTH_METHOD: trust
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run tests
+        run: bundle exec rails db:create test:all
+        env:
+          RAILS_ENV: test
