@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 5f3eb2195ba503919665028c01e4c76125e59fac
+  revision: 127138c09bcf061b4d17fb02ac79b214e3e05b47
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -169,7 +169,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     mini_mime (1.1.2)
-    minitest (5.18.1)
+    minitest (5.19.0)
     mrsk (0.14.0)
       activesupport (>= 7.0)
       bcrypt_pbkdf (~> 1.0)
@@ -180,7 +180,7 @@ GEM
       thor (~> 1.2)
       zeitwerk (~> 2.5)
     msgpack (1.7.0)
-    net-imap (0.3.6)
+    net-imap (0.3.7)
       date
       net-protocol
     net-pop (0.1.2)
@@ -230,7 +230,7 @@ GEM
     redis-client (0.14.1)
       connection_pool
     regexp_parser (2.8.1)
-    reline (0.3.6)
+    reline (0.3.7)
       io-console (~> 0.5)
     request_store (1.5.1)
       rack (>= 1.4)
@@ -325,12 +325,12 @@ GEM
       selenium-webdriver (~> 4.0)
     webrick (1.8.1)
     websocket (1.2.9)
-    websocket-driver (0.7.5)
+    websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.8)
+    zeitwerk (2.6.10)
     ziptz (3.0.17)
 
 PLATFORMS
