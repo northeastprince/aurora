@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 5f3eb2195ba503919665028c01e4c76125e59fac
+  revision: 4c9a990ffda8817e531b70c19c57ccc3078c0a22
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -180,7 +180,7 @@ GEM
       thor (~> 1.2)
       zeitwerk (~> 2.5)
     msgpack (1.7.0)
-    net-imap (0.3.6)
+    net-imap (0.3.7)
       date
       net-protocol
     net-pop (0.1.2)
@@ -325,7 +325,7 @@ GEM
       selenium-webdriver (~> 4.0)
     webrick (1.8.1)
     websocket (1.2.9)
-    websocket-driver (0.7.5)
+    websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
