@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 4c9a990ffda8817e531b70c19c57ccc3078c0a22
+  revision: 5e2d79b5cc71ceedd6b3821cf868583256629211
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -28,7 +28,7 @@ GIT
       net-imap
       net-pop
       net-smtp
-      rails-dom-testing (~> 2.0)
+      rails-dom-testing (~> 2.2)
     actionpack (7.1.0.alpha)
       actionview (= 7.1.0.alpha)
       activesupport (= 7.1.0.alpha)
@@ -36,7 +36,7 @@ GIT
       rack (>= 2.2.4)
       rack-session (>= 1.0.1)
       rack-test (>= 0.6.3)
-      rails-dom-testing (~> 2.0)
+      rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
     actiontext (7.1.0.alpha)
       actionpack (= 7.1.0.alpha)
@@ -49,7 +49,7 @@ GIT
       activesupport (= 7.1.0.alpha)
       builder (~> 3.1)
       erubi (~> 1.11)
-      rails-dom-testing (~> 2.0)
+      rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
     activejob (7.1.0.alpha)
       activesupport (= 7.1.0.alpha)
@@ -67,10 +67,13 @@ GIT
       activesupport (= 7.1.0.alpha)
       marcel (~> 1.0)
     activesupport (7.1.0.alpha)
+      base64
       concurrent-ruby (~> 1.0, >= 1.0.2)
       connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
+      mutex_m
       tzinfo (~> 2.0)
     rails (7.1.0.alpha)
       actioncable (= 7.1.0.alpha)
@@ -103,6 +106,7 @@ GEM
     appsignal (3.4.9)
       rack
     ast (2.4.2)
+    base64 (0.1.1)
     bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -128,6 +132,8 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    drb (2.1.1)
+      ruby2_keywords
     ed25519 (1.3.0)
     erubi (1.12.0)
     et-orbi (1.2.7)
@@ -168,7 +174,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
-    mini_mime (1.1.2)
+    mini_mime (1.1.5)
     minitest (5.19.0)
     mrsk (0.15.1)
       activesupport (>= 7.0)
@@ -180,6 +186,7 @@ GEM
       thor (~> 1.2)
       zeitwerk (~> 2.5)
     msgpack (1.7.0)
+    mutex_m (0.1.2)
     net-imap (0.3.7)
       date
       net-protocol
@@ -193,7 +200,7 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.5.9)
-    nokogiri (1.15.3-x86_64-linux)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.3)
@@ -216,7 +223,7 @@ GEM
     rackup (2.1.0)
       rack (>= 3)
       webrick (~> 1.8)
-    rails-dom-testing (2.1.1)
+    rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
@@ -230,7 +237,7 @@ GEM
     redis-client (0.14.1)
       connection_pool
     regexp_parser (2.8.1)
-    reline (0.3.7)
+    reline (0.3.8)
       io-console (~> 0.5)
     request_store (1.5.1)
       rack (>= 1.4)
@@ -330,7 +337,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.10)
+    zeitwerk (2.6.11)
     ziptz (3.0.17)
 
 PLATFORMS
