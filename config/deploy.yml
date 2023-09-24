@@ -1,10 +1,7 @@
-# Name of your application. Used to uniquely configure containers.
 service: aurora
 
-# Name of the container image.
 image: northeastprince/aurora
 
-# Deploy to these servers.
 servers:
   web:
     hosts:
@@ -22,16 +19,13 @@ servers:
       memory: 1g
       cpus: 1
 
-# Credentials for your image host.
 registry:
-  # Specify the registry server, if you're not using Docker Hub
   server: ghcr.io
   username:
-    - MRSK_REGISTRY_USERNAME
+    - KAMAL_REGISTRY_USERNAME
   password:
-    - MRSK_REGISTRY_PASSWORD
+    - KAMAL_REGISTRY_PASSWORD
 
-# Inject ENV variables into containers (secrets come from .env).
 env:
   clear:
     RAILS_ENV: production
@@ -49,21 +43,11 @@ env:
     - TWILIO_MESSAGING_SERVICE_SID
     - APPSIGNAL_PUSH_API_KEY
 
-# Call a broadcast command on deploys.
-# audit_broadcast_cmd:
-#   bin/broadcast_to_bc
-
-# Use a different ssh user than root
-# ssh:
-#   user: app
-
-# Configure builder setup.
 builder:
   remote:
     arch: amd64
     host: ssh://root@5.75.231.239
 
-# Use accessory services (secrets come from .env).
 accessories:
   pg:
     image: postgres
@@ -90,12 +74,5 @@ accessories:
       memory: 512m
       cpus: 0.5
 
-# Configure custom arguments for Traefik
-# traefik:
-#   args:
-#     accesslog: true
-#     accesslog.format: json
-
-# Configure a custom healthcheck (default is /up on port 3000)
-healthcheck:
+healthcheck: # default is /up on port 3000
   path: /robots.txt

@@ -35,7 +35,7 @@ gem "ziptz"
 gem "faraday"
 gem "twilio-ruby"
 
-gem "mrsk" # deployments
+gem "kamal" # deployments
 gem "lograge"
 gem "appsignal" # monitoring
 

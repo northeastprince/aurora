@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-# get the Git hash in MRSK_CONTAINER_NAME if it exists and use it for AppSignal deploy tracking
-if [ -n "${MRSK_CONTAINER_NAME}" ]; then
-  export APP_REVISION=$(echo "${MRSK_CONTAINER_NAME}" | awk -F- '{print $NF}')
+# get the Git hash in KAMAL_CONTAINER_NAME if it exists and use it for AppSignal deploy tracking
+if [ -n "${KAMAL_CONTAINER_NAME}" ]; then
+  export APP_REVISION=$(echo "${KAMAL_CONTAINER_NAME}" | awk -F- '{print $NF}')
 fi
 
 if [ "${*}" == "./bin/rails server" ]; then
