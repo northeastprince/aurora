@@ -154,7 +154,7 @@ GEM
       reline (>= 0.3.8)
     json (2.6.3)
     jwt (2.7.1)
-    kamal (0.16.1)
+    kamal (1.0.0)
       activesupport (>= 7.0)
       bcrypt_pbkdf (~> 1.0)
       concurrent-ruby (~> 1.2)
