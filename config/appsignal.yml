@@ -1,0 +1,7 @@
+default: &defaults
+  push_api_key: <%= Rails.application.credentials.appsignal_api_key %>
+  active: false
+
+production:
+  <<: *defaults
+  active: true

@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   def current_temp_in_fahrenheit
     connection = Faraday.new("https://api.weatherapi.com") { |connection| connection.response :json }
-    response = connection.get("/v1/forecast.json?key=#{ENV["WEATHERAPI_KEY"]}&q=#{zip_code}&days=1&aqi=no&alerts=no")
+    response = connection.get("/v1/forecast.json?key=#{Rails.application.credentials.weatherapi_key!}&q=#{zip_code}&days=1&aqi=no&alerts=no")
 
     if (temp = response.body.dig("current", "temp_f"))
       temp.to_i

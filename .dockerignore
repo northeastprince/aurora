@@ -1,7 +1,5 @@
 /.git
 
-/.idea
-
 /.bundle
 
 /log/*
@@ -20,7 +18,5 @@
 !/tmp/storage/.keep
 
 /public/assets
-
-*.pem
 
 .env*
