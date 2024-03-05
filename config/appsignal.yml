@@ -1,5 +1,6 @@
 default: &defaults
   push_api_key: <%= Rails.application.credentials.appsignal_api_key %>
+  ignore_actions: [HomeController#show]
   active: false
 
 production:
